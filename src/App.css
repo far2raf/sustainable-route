@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  /* margin: auto auto; */
 }
 
 .App-logo {
@@ -35,4 +36,39 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.entry_phrase {
+  font-size: 32px;
+}
+
+.header {
+  background-color: gray;
+  height: 50px;
+}
+
+.main {
+  margin-top: auto;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: gray;
+  height: 30px;
+  width: 100%;
+}
+
+html, body, #root, .App, .container {
+  height: 100%;
+}
+
+.main {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+  width: 100%;
 }

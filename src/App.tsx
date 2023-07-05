@@ -28,7 +28,11 @@ function App() {
   }
   return (
     <div className="App">
-      <div>Do you want to have a sustainable route?</div>
+      <div className='container'>
+        <div className='header'>
+        </div>
+        <div className='main'>
+      <div className='entry_phrase'>Do you want to have a sustainable route?</div>
       <div>
         <div>
           Start geo
@@ -58,6 +62,10 @@ function App() {
             }
           </>
         ) : (<></>)}
+        </div>
+      </div>
+        <div className='footer'>
+        </div>
       </div>
     </div>
   );
