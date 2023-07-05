@@ -9,10 +9,23 @@ function App() {
     window.location.href = `https://www.google.com/search?q=start: ${start}, finish: ${finish}`;
     
   };
-  const points: any[] = ['21234'];
-  const googleMapLinkCreator = () => {
-    return 'https://www.google.com/maps';
+  const points: any[] = [
+    [53.566474, 9.912803],
+    [53.558244, 9.959284]
+  ].map(el => ({x: el[0], y: el[1]}));
+
+  const googleMapLink = 'https://www.google.com/maps/place';
+
+  const googleMapLinkCreator = (e: any) => {
+    return `${googleMapLink}/${e.x},${e.y}`;
   };
+  const viewMapLinCreator = (e: any) => {
+    return (
+      <div>
+        <a href={ e }> {e} </a> 
+      </div>
+    );
+  }
   return (
     <div className="App">
       <div>Do you want to have a sustainable route?</div>
@@ -38,11 +51,11 @@ function App() {
       <div>
         { points ? (
           <>
-            <a 
-            onClick={() => window.location.href=googleMapLinkCreator()}
-            >
-              Click to check your route in Google Map!
-            </a> 
+            { 
+              points
+                .map(googleMapLinkCreator)
+                .map(viewMapLinCreator)
+            }
           </>
         ) : (<></>)}
       </div>
